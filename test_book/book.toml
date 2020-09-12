@@ -8,4 +8,3 @@ title = "Pandoc Test Book"
 
 [preprocessor.pandoc-format]
 command = "mdbook-pandoc-format"
-blow-up = "yes"
