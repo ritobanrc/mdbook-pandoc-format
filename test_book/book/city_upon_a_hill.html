@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>City upon a hill - Pandoc Test Book</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1</a></li><li class="chapter-item expanded "><a href="city_upon_a_hill.html" class="active"><strong aria-hidden="true">2.</strong> City upon a hill</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Pandoc Test Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#city-upon-a-hill-soapstoner--precis" id="city-upon-a-hill-soapstoner--precis">City Upon a Hill SOAPSTONER &amp; Precis</a></h1>
+<h2><a class="header" href="#soapstoner" id="soapstoner">SOAPSTONER</a></h2>
+<h3><a class="header" href="#subject" id="subject">Subject</a></h3>
+<p>The plan and goals, with respect to religion, for the new Massachusetts Bay Colony.</p>
+<p><strong>A Third level heading</strong></p>
+<h3><a class="header" href="#occasion" id="occasion">Occasion</a></h3>
+<p>A sermon delivered to settlers of the New World before embarking on their journey on the ship Arbella. Winthrop lays out his vision for the new Massachusetts Bay Colony.</p>
+<h3><a class="header" href="#audience" id="audience">Audience</a></h3>
+<p>His audience are the colonists accompanying him.</p>
+<h3><a class="header" href="#purpose" id="purpose">Purpose</a></h3>
+<p>Winthrop is trying to convince the colonists of his vision, of the camaraderie he describes, &quot;We must delight in each other; make others’ conditions our own; rejoice together, mourn together, labor and suffer together&quot;, the absolute submission to an ultimate God, &quot;the only way to avoid this shipwreck...is to follow the counsel of Micah, ... to walk humbly with our God.&quot;.</p>
+<p>However, it is important to note that all of the colonists were already pious and would listen to Winthrop regardless, so he's more trying to energize them and assert his authority rather than trying to resolve a disagreement.</p>
+<h3><a class="header" href="#speaker" id="speaker">Speaker</a></h3>
+<p>The speaker is literally John Winthrop, in his capacity as a priest. However, he presents himself as a direct messenger carrying the counsel of God, &quot;The Lord will be our God, and delight to dwell among us, as His own people, and will command a blessing upon us in all our ways.&quot;</p>
+<h3><a class="header" href="#style-and-linguistic-elements" id="style-and-linguistic-elements">Style and Linguistic Elements</a></h3>
+<p>Winthrop often contrasts polysyndeton and asyndeton to create an effect.</p>
+<blockquote>
+<p>For this end, we must be knit together, in this work, as one man. We must entertain each other in brotherly affection. We must be willing to abridge ourselves of our superfluities, for the supply of others’ necessities.</p>
+</blockquote>
+<blockquote>
+<p>We must delight in each other; make others’ conditions our own; rejoice together, mourn together, labor and suffer together, always having before our eyes our commission and community in the work, as members of the same body.</p>
+</blockquote>
+<p>Here, he uses asyndeton to emphasize the Herculean nature of the task set before them, the importance of banding together and helping each other.</p>
+<blockquote>
+<p>The Lord will be our God, <strong>and</strong> delight to dwell among us, as His own people, <strong>and</strong> will command a blessing upon us in all our ways, so that we shall see much more of His wisdom, power, goodness <strong>and</strong> truth, than formerly we have been acquainted with.</p>
+</blockquote>
+<p>But then, when describing God, he switches to using polysyndeton, slowly building up a description showing just how generous God is. </p>
+<blockquote>
+<p>&quot;Beloved, there is now set before us life and death, good and evil,&quot; in that we are commanded this day to love the Lord our God, <em>and</em> to love one another, to walk in his ways <em>and</em> to keep his Commandments <em>and</em> his ordinance <em>and</em> his laws, <em>and</em> the articles of our Covenant with Him, that we may live <em>and</em> be multiplied, <em>and</em> that the Lord our God may bless us in the land whither we go to possess it.</p>
+</blockquote>
+<p>And once again, when discussing God, Winthrop uses polysyndeton to highlight God's generosity. </p>
+<p>Winthrop also highlights his message of camaraderie using anaphora, often repeating &quot;we must&quot; at the beginning of sentences and phrases. For example, &quot;we must be knit together&quot;, &quot;We must entertain...&quot;, &quot;We must be willing...&quot;, &quot;We must uphold&quot;, &quot;We must delight&quot;. And later, when describing God's hypothetical punishment if the colonists fail to achieve his vision, he uses &quot;we shall&quot;, &quot;we shall be made a story&quot;, &quot;We shall open the mouths of enemies&quot;, &quot;We shall shame the faces&quot;</p>
+<h3><a class="header" href="#tone" id="tone">Tone</a></h3>
+<p>Winthrop's tone is one of necessity. He begins by declaring that what he is about to describe is the &quot;<em>only</em> way to avoid shipwreck&quot;. Then, by repeating &quot;we must&quot; at the beginning of each phrase, he continuing building the theme of necessity, the implication that there is no other choice than to take the godly path. He continues with the theme of necessity, of the impossibility of any other option, by saying &quot;The Lord <em>will</em> be our God,&quot; and then goes on the threaten any who dissent or suggest a different path for the colony, saying that if the colonists stray from the path he has laid out, &quot;[they] shall be made a story and a by-word through the world.&quot; There is a constant juxtaposition of complete submission to God and God being benevolent and forgiving. This is particularly illustrated in the final line, where Winthrop says &quot;by obeying His voice and cleaving to Him, for He is our life and our prosperity.&quot;</p>
+<p>Winthrop also extensively uses imagery, often even hyperbolic imagery, either to emphasize the power of God or to portray the horror of denying him. In glorifying God and the potential impact of God on the colony, Winthrop says, &quot;ten of us shall be able to resist a thousand of our enemies&quot; and &quot;He shall make us a praise and glory that men shall say of succeeding plantations, 'may the Lord make it like that of New England.'&quot; Winthrop uses this imagery to illustrate the possibility if the colonists follow his vision. In contrast, when instilling them with the fear of not following his vision, he details the &quot;curses upon us till we be consumed out of the good land whither we are going.&quot;</p>
+<h3><a class="header" href="#organization" id="organization">Organization</a></h3>
+<p>Winthrop's speech is organized deductively. His prescription is clearly stated at the top, that the colonists must &quot;walk humbly in the face of God&quot;. He then goes on to explain what that entails, and describes the consequences for not doing so. </p>
+<h3><a class="header" href="#narrative-style" id="narrative-style">Narrative Style</a></h3>
+<p>The writing is very dramatic. By building up a glorious vision of a &quot;city upon a hill&quot;, then tearing it down by showing what will happen if they do not listen to him, Winthrop very effectively creates a captivating narrative. He then mirrors this structure in his conclusion, first by building up the positive example of following God, &quot;God may bless us in the land whither we go to possess it.&quot;, and then tearing it down, &quot;we shall surely perish out of the good land whither we pass over this vast sea to possess it.&quot;</p>
+<h3><a class="header" href="#evidence" id="evidence">Evidence</a></h3>
+<p>The text is overwhelmingly religion-focused, often using words like &quot;obey&quot; and &quot;love&quot; in the specific way that they are associated with religion. The imagery recalls ideas of &quot;glory&quot;, &quot;blessings&quot;, &quot;spirit&quot;. He quotes the bible, Deut. 30. as evidence to show they are commanded to both love and obey their God.</p>
+<h3><a class="header" href="#rhetoric" id="rhetoric">Rhetoric</a></h3>
+<p><strong>Ethos</strong>: Winthrop already has quite a bit of ethos, being a priest in a heavily religion community. Additionally, he cites Deut. 30. &quot;'Beloved, there is now set before us life and death, good and evil,'&quot; demonstrating his familiarity with and ability to interpret the Bible. Additionally, he often speaks as if he is a direct messenger from God, lending him additional credibility.</p>
+<p><strong>Pathos</strong>: These is quite a bit of pathos used in this piece. He uses loaded words like &quot;wisdom, power, goodness and truth&quot; to convey the glory of God to the congregation, and he utilizes vivid imagery &quot;ten of us shall be able
+to resist a thousand of our enemies&quot; to energize his audience. He additionally preys on fear in order to to push the audience toward obeying God, as he sees it, detailing what will happen if he (and God) are ignored. He makes them feel important, &quot;The eyes of all people are upon us.&quot;, and then tells them how to use that importance to become successful.</p>
+<p><strong>Logos</strong>: Some of his argument also rests on logic. He begins with &quot;Now the only way to avoid this shipwreck, and to provide for our posterity,&quot; and then logically argues that in order to &quot;provide for our posterity&quot;, the colonists must be successful and follow the steps he outlines. The pragmatic aspects of this speech, the camaraderie, &quot;we must be knit together&quot;, &quot;entertain each other in brotherly affection.&quot;, and &quot;abridge ourselves of our superfluities, for the supply of others necessities&quot; are all logical statements of fact, things that are practically important to do because of their situation.</p>
+<h2><a class="header" href="#precis" id="precis">Precis</a></h2>
+<p>John Winthrop, in the sermon &quot;A Model of Christian Charity&quot;, elucidates the importance of both charity and piety in the founding of the Massachusetts Bay Colony. Winthrop supports his thesis by juxtaposing a glorious image of a successful Christian city against the hypothetical failure and disgrace if his advice is not heeded. The speaker's purpose is to invigorate the colonists and convince them to follow his lead in order to build a colony that satisfies God and is famous. The author writes in a pleading tone, highlighting the necessity of following him and suggesting that unfortunate vicissitudes are in store for any who do not follow God with him.</p>
+<p>Although I am not religious and do not particularly care for the numerous allusions Winthrop makes to obeying God, I actually agree with the message of &quot;brotherly affection&quot;. For example, Winthrop says &quot;We must be willing to abridge ourselves of our superfluities, for the supply of others’ necessities.&quot; This idea is particularly politically relevant today. As the threat of climate change becomes ever more serious, as we face more severe fire seasons, more severe droughts, more freak storms, we must must recognize that some people will have to give up certain benefits, &quot;superfluities&quot;, they enjoy today. Obviously, fossil fuel executives will lose money as we transition to solar, wind, and other more sustainable forms of energy generation, but also middle and upper-middle class people may have to cut back on meat consumption or air conditioning usage. The threat of several feet of sea level rise, completely destroying most large cities like Los Angeles, Miami, and New York, and the necessities of the people living in those areas must be prioritized. Similarly, the need for a national healthcare system, providing healthcare as a human right to everyone, will necessitate that some people give up &quot;superfluities&quot;. Even if wait times increase, or access to cosmetic procedures decreases, when 45,000 people die every year from lack of access to healthcare, it is clear that the necessities of some people ought to be prioritized over the convenience of others. Generally, I find that modern politics often lacks the empathy Winthrop describes, where we &quot;make others’ conditions our own; rejoice together, mourn together, labor and suffer together&quot;. We must be more empathetic to the plights of those less privileged than us, and must incorporate that into out policies and decision making processes. </p>
+<h2><a class="header" href="#discussion" id="discussion">Discussion</a></h2>
+<p><strong>How is this piece deeply ingrained in the American Psyche?</strong></p>
+<p>The &quot;city upon a hill&quot; mentality that John Winthrop describes is a fundamental part of the idealized conception of America. It is the origin of the idea of American exceptionalism, which is pervasive throughout our culture. Whether it's political debates where candidates say, &quot;We don't want to be like other countries, we're America&quot; and &quot;America First&quot;, or in less pernicious situations or even beneficial situations, like when we take cuisines from across the world and appropriate them into &quot;Indian-American&quot; or &quot;Chinese-American&quot; food, the idea that America can do anything is almost a basic assumption of being an American. Which is part of why I find this speech by John Winthrop so interesting. When Winthrop says America is a city upon a hill, he doesn't mean that America is better than everyone else. He means that others will be looking towards America, to see if his little &quot;Puritan experiment&quot; works. At some point, between Winthrop and today, the meaning of city upon a hill shifted from a country that must actively work to improve itself to a country that is great. Winthrop says, &quot;we must&quot; aim to be a &quot;city upon a hill&quot;, but Reagan says America &quot;is still&quot; a &quot;a shining city upon a hill&quot;. America today still believes we can start wars and launch coups (see Venezuela and Bolivia) across the world, that we are exempt from international law and do not have to listen to the International Court of Justice. We see ourselves today as a &quot;shining city upon a hill&quot;, and everyone else should be looking toward us, and we can look down at them. </p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="chapter_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="chapter_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

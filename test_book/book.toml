@@ -1,0 +1,11 @@
+[book]
+authors = ["Ritoban Roy-Chowdhury"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Pandoc Test Book"
+
+
+[preprocessor.pandoc-format]
+command = "mdbook-pandoc-format"
+blow-up = "yes"
